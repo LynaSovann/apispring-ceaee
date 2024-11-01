@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apispring-ceaee-deployment
+  labels:
+    app: apispring-ceaee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apispring-ceaee
+  template:
+    metadata:
+      labels:
+        app: apispring-ceaee
+    spec:
+      containers:
+        - name: apispring-ceaee-container
+          image: pipejet/apispring-ceaee:latest
+          ports:
+            - containerPort: 8080
