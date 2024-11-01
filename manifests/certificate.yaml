@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: apispring-ceaee-certificate
+  namespace: apispring-ceaee
+spec:
+  secretName: apispring-ceaee-secret-tls
+  commonName: thanak81-apispring.assessify.org
+  dnsNames:
+  - thanak81-apispring.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
